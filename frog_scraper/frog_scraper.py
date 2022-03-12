@@ -1,3 +1,7 @@
+import smtplib, ssl
+import json
+import requests
+
 
 def load_json(path):
     return json.load(open(path))
@@ -14,8 +18,6 @@ def check_backwater(request_url):
 
 def send_email(recipient, message):
     keys = load_json("../credentials.json")
-
-    import smtplib, ssl
 
     port = 465  # For SSL
     smtp_server = "smtp.gmail.com"
